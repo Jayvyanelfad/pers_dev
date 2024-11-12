@@ -1,13 +1,13 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f8ff; /* Light blue background */
+    background-color: #f0f8ff; /* AliceBlue background */
     color: #333;
     margin: 0;
     padding: 0;
 }
 
 header {
-    background-color: #4a90e2; /* Blue */
+    background-color: #4a90e2; /* CadetBlue */
     color: white;
     padding: 20px;
     text-align: center;
@@ -29,7 +29,7 @@ main {
 }
 
 section {
-    background-color: #e0f7fa; /* Light cyan */
+    background-color: #ffe4b5; /* Moccasin */
     border-radius: 10px;
     margin: 20px 0;
     padding: 20px;
@@ -37,19 +37,11 @@ section {
 }
 
 h2 {
-    color: #00796b; /* Teal */
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-    margin-top: 20px;
-    border: 2px solid #00796b;
-    border-radius: 5px;
+    color: #d2691e; /* Chocolate */
 }
 
 footer {
-    background-color: #4a90e2; /* Blue */
+    background-color: #4682b4; /* SteelBlue */
     color: white;
     text-align: center;
     padding: 10px 0;
