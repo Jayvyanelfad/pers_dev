@@ -1,21 +1,22 @@
-// enroll.js
+const { createEnrollment, getEnrollments, updateEnrollment, deleteEnrollment } = require('./enrollments');
+const { ObjectId } = require('mongodb');
 
-document.getElementById('enrollForm').addEventListener('submit', function (e) {
-    e.preventDefault();
+// Example usage
+const newEnrollment = {
+  name: "John Doe",
+  course: "Web Development",
+  date: new Date()
+};
 
-    const formData = {
-        firstName: document.getElementById('firstName').value,
-        lastName: document.getElementById('lastName').value,
-        email: document.getElementById('email').value,
-        phone: document.getElementById('phone').value
-    };
+// Create a new enrollment
+createEnrollment(newEnrollment);
 
-    fetch('/enroll', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData)
-    })
-    .then(response => response.text())
-    .then(data => alert(data))
-    .catch(error => console.error('Error:', error));
-});
+// Fetch all enrollments
+getEnrollments();
+
+// Update an enrollment (replace 'id' with actual ObjectId)
+const updatedInfo = { course: "Advanced Web Development" };
+updateEnrollment('id', updatedInfo);
+
+// Delete an enrollment (replace 'id' with actual ObjectId)
+deleteEnrollment('id');
