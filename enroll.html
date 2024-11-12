@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enroll Now - Personal Development Academy</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Enroll Now</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="enroll.html">Enroll Now</a>
+            <a href="courses.html">Courses</a>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Enrollment Form</h2>
+            <p>Please fill out the form below to enroll in our courses.</p>
+            <form id="enrollment-form">
+                <label for="name">Name:</label><br>
+                <input type="text" id="name" name="name" required><br><br>
+
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" required><br><br>
+
+                <label for="course">Select Course:</label><br>
+                <select id="course" name="course">
+                    <option value="time-management">Time Management & Productivity</option>
+                    <option value="communication-skills">Effective Communication Skills</option>
+                    <option value="leadership">Leadership and Teamwork</option>
+                    <option value="emotional-intelligence">Emotional Intelligence</option>
+                </select><br><br>
+
+                <input type="submit" value="Enroll">
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Personal Development Academy. All rights reserved.</p>
+    </footer>
+</body>
+</html>
