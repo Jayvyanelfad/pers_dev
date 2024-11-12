@@ -1,17 +1,15 @@
 {
-  "name": "personal-development-website",
-  "version": "1.0.0",
-  "description": "Project involves creating an online enrollment system focused on personal development courses. It includes HTML/CSS for structure and styling, JavaScript for frontend interactivity across demo pages, Node.js for server-side functionality, MongoDB for CRUD operations, and Figma for design mockups and UI structure.",
-  "main": "server.js",
+  "name": "personal-development-academy",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "https://jayvyanelfad.github.io/pers_dev",
   "scripts": {
-    "start": "node server.js"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
-  "dependencies": {
-    "express": "^4.17.1",
-    "mongoose": "^5.12.3",
-    "body-parser": "^1.19.0"
-  },
-  "author": "Jay Vyanel",
-  "license": "ISC"
+  // Other configurations...
 }
-
