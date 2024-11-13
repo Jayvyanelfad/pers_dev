@@ -1,26 +1,30 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const steps = document.querySelectorAll('.step');
-    let currentStep = 0;
+    const progressBars = document.querySelectorAll('.progress-bar');
 
-    function showStep(index) {
-        steps.forEach((step, i) => {
-            step.style.display = i === index ? 'block' : 'none';
+    progressBars.forEach(progressBar => {
+        const steps = progressBar.querySelectorAll('.step');
+        let currentStep = 0;
+
+        function showStep(index) {
+            steps.forEach((step, i) => {
+                step.classList.toggle('active', i <= index);
+            });
+        }
+
+        progressBar.querySelector('.next-step').addEventListener('click', () => {
+            if (currentStep < steps.length - 1) {
+                currentStep++;
+                showStep(currentStep);
+            }
         });
-    }
 
-    document.getElementById('nextStep').addEventListener('click', () => {
-        if (currentStep < steps.length - 1) {
-            currentStep++;
-            showStep(currentStep);
-        }
+        progressBar.querySelector('.prev-step').addEventListener('click', () => {
+            if (currentStep > 0) {
+                currentStep--;
+                showStep(currentStep);
+            }
+        });
+
+        showStep(currentStep);
     });
-
-    document.getElementById('prevStep').addEventListener('click', () => {
-        if (currentStep > 0) {
-            currentStep--;
-            showStep(currentStep);
-        }
-    });
-
-    showStep(currentStep);
 });
