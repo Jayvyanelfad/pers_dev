@@ -1,4 +1,6 @@
 document.getElementById('enrollment-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+
     const form = e.target;
     const email = form.querySelector('#email').value;
     const phone = form.querySelector('#phone').value;
@@ -16,7 +18,7 @@ document.getElementById('enrollment-form').addEventListener('submit', (e) => {
         isValid = false;
     }
 
-    if (!isValid) {
-        e.preventDefault();
+    if (isValid) {
+        form.submit();
     }
 });
