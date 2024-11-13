@@ -1,17 +1,45 @@
-import React from 'react';
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Effective Communication Skills</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Effective Communication Skills</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="enroll.html">Enroll Now</a>
+            <a href="courses.html">Courses</a>
+        </nav>
+    </header>
 
-const TimeManagementPage = () => {
-  return (
-    <div>
-      <h1>Time Management & Productivity</h1>
-      <p>Learn how to effectively manage your time and boost your productivity with proven strategies and tools.</p>
-      <ul>
-        <li>Goal Setting</li>
-        <li>Prioritization Techniques</li>
-        <li>Time Tracking</li>
-      </ul>
-    </div>
-  );
-};
+    <main>
+        <section>
+            <h2>Lesson 1: Fundamentals of Communication</h2>
+            <p>Understanding the basics of effective communication.</p>
+            <ul>
+                <li>Verbal and non-verbal communication</li>
+                <li>Active listening skills</li>
+                <li>Barriers to effective communication</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Lesson 2: Building Confidence</h2>
+            <p>Developing confidence in your communication skills.</p>
+            <ul>
+                <li>Overcoming public speaking anxiety</li>
+                <li>Practicing assertiveness</li>
+                <li>Enhancing body language</li>
+            </ul>
+        </section>
+        <!-- Add more lessons as needed -->
+    </main>
 
-export default TimeManagementPage;
+    <footer>
+        <p>&copy; 2024 Personal Development Academy. All rights reserved.</p>
+    </footer>
+</body>
+</html>
