@@ -1,14 +1,14 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f4f8; /* Light background for better readability */
+    background-color: #E3F2FD;
     margin: 0;
     padding: 0;
 }
 
 header {
-    background-color: #2f4f4f; /* Dark slate gray for header */
+    background-color: #1A237E; /* Dark Blue */
     color: white;
-    padding: 15px 0;
+    padding: 10px 0;
     text-align: center;
 }
 
@@ -18,26 +18,22 @@ nav a {
     text-decoration: none;
 }
 
-nav a:hover {
-    text-decoration: underline;
-}
-
 main {
     padding: 20px;
     max-width: 800px;
-    margin: 20px auto;
-    background: #ffffff; /* White background for main content */
+    margin: auto;
+    background: white;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 h1, h2 {
-    color: #1a1a1a; /* Dark color for headings */
+    color: #8B4513; /* Chocolate */
 }
 
 form label {
     margin-bottom: 5px;
-    color: #3d3d3d; /* Gray color for labels */
+    color: #1A73E8; /* Light Blue */
 }
 
 input, select, button {
@@ -45,22 +41,19 @@ input, select, button {
     margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    width: 100%; /* Full width inputs */
-}
-
-input:focus, select:focus {
-    border-color: #1e90ff; /* Dodger blue for focused input fields */
 }
 
 button {
-    background-color: #ff69b4; /* Hot pink background for button */
+    background-color: #E91E63; /* Pink */
     color: white;
     border: none;
     cursor: pointer;
+    border-radius: 5px;
+    padding: 10px 20px;
 }
 
 button:hover {
-    background-color: #ff1493; /* Deep pink on hover for button */
+    background-color: #C2185B; /* Darker Pink */
 }
 
 ul.courses-list {
@@ -74,20 +67,17 @@ ul.courses-list li {
 
 ul.courses-list li a {
     text-decoration: none;
-    color: #4682b4; /* Steel blue color for links */
+    color: #1A237E; /* Dark Blue */
 }
 
 ul.courses-list li a:hover {
-    color: #2e8b57; /* Sea green on hover for links */
+    color: #C2185B; /* Darker Pink */
     text-decoration: underline;
 }
 
 footer {
     text-align: center;
-    padding: 15px 0;
-    background-color: #2f4f4f; /* Dark slate gray for footer */
+    padding: 10px 0;
+    background-color: #1A237E; /* Dark Blue */
     color: white;
-    position: absolute;
-    width: 100%;
-    bottom: 0;
 }
