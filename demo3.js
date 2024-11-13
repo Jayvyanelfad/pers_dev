@@ -1,5 +1,22 @@
-// demo3.js
+document.getElementById('enrollment-form').addEventListener('submit', (e) => {
+    const form = e.target;
+    const email = form.querySelector('#email').value;
+    const phone = form.querySelector('#phone').value;
+    const emailPattern = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
+    const phonePattern = /^[0-9]{10}$/;
+    let isValid = true;
 
-document.getElementById('colorButton').addEventListener('click', function () {
-    document.body.style.backgroundColor = "#" + Math.floor(Math.random()*16777215).toString(16);
+    if (!emailPattern.test(email)) {
+        alert('Please enter a valid email address.');
+        isValid = false;
+    }
+
+    if (!phonePattern.test(phone)) {
+        alert('Please enter a valid 10-digit phone number.');
+        isValid = false;
+    }
+
+    if (!isValid) {
+        e.preventDefault();
+    }
 });
