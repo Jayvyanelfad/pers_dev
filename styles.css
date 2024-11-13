@@ -1,12 +1,12 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #E3F2FD;
+    background-color: #F0F4F8; /* Soft light blue */
     margin: 0;
     padding: 0;
 }
 
 header {
-    background-color: #1A237E; /* Dark Blue */
+    background-color: #FF6347; /* Tomato */
     color: white;
     padding: 10px 0;
     text-align: center;
@@ -16,6 +16,10 @@ nav a {
     margin: 0 15px;
     color: white;
     text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
 }
 
 main {
@@ -28,12 +32,12 @@ main {
 }
 
 h1, h2 {
-    color: #8B4513; /* Chocolate */
+    color: #6A5ACD; /* Slate blue */
 }
 
 form label {
     margin-bottom: 5px;
-    color: #1A73E8; /* Light Blue */
+    color: #FF6347; /* Tomato */
 }
 
 input, select, button {
@@ -43,8 +47,12 @@ input, select, button {
     border-radius: 5px;
 }
 
+input:focus, select:focus {
+    border-color: #FF6347; /* Tomato */
+}
+
 button {
-    background-color: #E91E63; /* Pink */
+    background-color: #FF69B4; /* Hot pink */
     color: white;
     border: none;
     cursor: pointer;
@@ -53,7 +61,7 @@ button {
 }
 
 button:hover {
-    background-color: #C2185B; /* Darker Pink */
+    background-color: #FF1493; /* Deep pink */
 }
 
 ul.courses-list {
@@ -67,17 +75,19 @@ ul.courses-list li {
 
 ul.courses-list li a {
     text-decoration: none;
-    color: #1A237E; /* Dark Blue */
+    color: #6A5ACD; /* Slate blue */
 }
 
 ul.courses-list li a:hover {
-    color: #C2185B; /* Darker Pink */
+    color: #FF1493; /* Deep pink */
     text-decoration: underline;
 }
 
 footer {
     text-align: center;
     padding: 10px 0;
-    background-color: #1A237E; /* Dark Blue */
+    background-color: #FF6347; /* Tomato */
     color: white;
+    position: relative;
+    width: 100%;
 }
