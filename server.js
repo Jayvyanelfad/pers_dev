@@ -7,6 +7,7 @@ const port = 3000;
 
 app.use(bodyParser.json());
 
+// Connect to MongoDB
 mongoose.connect('mongodb://localhost:27017/enrollmentDB', {
   useNewUrlParser: true,
   useUnifiedTopology: true
@@ -18,6 +19,7 @@ db.once('open', () => {
   console.log('Connected to MongoDB');
 });
 
+// Define the schema and model for enrollments
 const enrollmentSchema = new mongoose.Schema({
   firstName: String,
   lastName: String,
@@ -28,7 +30,7 @@ const enrollmentSchema = new mongoose.Schema({
 
 const Enrollment = mongoose.model('Enrollment', enrollmentSchema);
 
-// Routes
+// Define routes
 app.post('/enroll', async (req, res) => {
   const newEnrollment = new Enrollment({
     firstName: req.body.firstName,
