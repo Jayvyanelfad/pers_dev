@@ -1,8 +1,18 @@
-// demo2.js
+document.addEventListener('DOMContentLoaded', () => {
+    const courseLinks = document.querySelectorAll('.course-link');
+    const contentContainer = document.getElementById('content-container');
 
-let count = 0;
+    courseLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const courseId = link.getAttribute('data-course-id');
 
-document.getElementById('counterButton').addEventListener('click', function () {
-    count++;
-    document.getElementById('counter').innerText = `Count: ${count}`;
+            fetch(`${courseId}.html`)
+                .then(response => response.text())
+                .then(html => {
+                    contentContainer.innerHTML = html;
+                })
+                .catch(error => console.error('Error loading content:', error));
+        });
+    });
 });
