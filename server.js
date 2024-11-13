@@ -1,37 +1,68 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+
 const app = express();
 const port = 3000;
 
-// Connect to MongoDB
-mongoose.connect('mongodb://localhost:27017/enrollment', { useNewUrlParser: true, useUnifiedTopology: true });
-
-// Define User Schema
-const userSchema = new mongoose.Schema({
-    firstName: String,
-    lastName: String,
-    email: String,
-    phone: String
-});
-const User = mongoose.model('User', userSchema);
-
-// Middleware
 app.use(bodyParser.json());
-app.use(express.static('views'));  // Serve HTML files
 
-// Route to handle enrollment form submission
-app.post('/enroll', (req, res) => {
-    const newUser = new User(req.body);
-    newUser.save((err) => {
-        if (err) {
-            res.status(500).send("Failed to enroll");
-        } else {
-            res.status(200).send("Enrollment successful");
-        }
-    });
+mongoose.connect('mongodb://localhost:27017/enrollmentDB', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+});
+
+const db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', () => {
+  console.log('Connected to MongoDB');
+});
+
+const enrollmentSchema = new mongoose.Schema({
+  firstName: String,
+  lastName: String,
+  email: String,
+  phone: String,
+  course: String
+});
+
+const Enrollment = mongoose.model('Enrollment', enrollmentSchema);
+
+// Routes
+app.post('/enroll', async (req, res) => {
+  const newEnrollment = new Enrollment({
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
+    email: req.body.email,
+    phone: req.body.phone,
+    course: req.body.course
+  });
+
+  await newEnrollment.save();
+  res.send('Enrollment successful!');
+});
+
+app.get('/enrollments', async (req, res) => {
+  const enrollments = await Enrollment.find();
+  res.json(enrollments);
+});
+
+app.post('/update-enrollment', async (req, res) => {
+  await Enrollment.updateOne({ _id: req.body.id }, {
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
+    email: req.body.email,
+    phone: req.body.phone,
+    course: req.body.course
+  });
+  res.send('Enrollment updated successfully!');
+});
+
+app.post('/delete-enrollment', async (req, res) => {
+  await Enrollment.deleteOne({ _id: req.body.id });
+  res.send('Enrollment deleted successfully!');
 });
 
 app.listen(port, () => {
-    console.log(`Server is running on http://localhost:${port}`);
+  console.log(`Server is running on port ${port}`);
 });
