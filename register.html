@@ -5,74 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register - Personal Development Academy</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f4f8;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 0;
-            text-align: center;
-        }
-        nav a {
-            margin: 0 15px;
-            color: white;
-            text-decoration: none;
-        }
-        main {
-            padding: 20px;
-            max-width: 600px;
-            margin: auto;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        form {
-            display: flex;
-            flex-direction: column;
-        }
-        label {
-            margin-bottom: 5px;
-            color: #1a73e8;
-        }
-        input, button {
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        button {
-            background-color: #1a73e8;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #0f5ba7;
-        }
-    </style>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            document.getElementById('registration-form').addEventListener('submit', (e) => {
-                e.preventDefault();
-                const username = document.getElementById('username').value;
-                const password = document.getElementById('password').value;
-                localStorage.setItem('username', username);
-                localStorage.setItem('password', password);
-                localStorage.setItem('isEnrolled', true);
-                alert('Registration successful! You can now access the courses.');
-                window.location.href = 'courses.html';
-            });
-        });
-    </script>
 </head>
 <body>
     <header>
         <h1>Register</h1>
         <nav>
             <a href="index.html">Home</a>
-            <a href="courses.html">Courses</
+            <a href="courses.html">Courses</a>
+        </nav>
+    </header>
+
+    <main>
+        <form id="registration-form">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            
+            <button type="submit">Register</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Personal Development Academy. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('registration-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            localStorage.setItem('isEnrolled', true);
+            alert('Registration successful! You can now access the courses.');
+            window.location.href = 'courses.html';
+        });
+    </script>
+</body>
+</html>
