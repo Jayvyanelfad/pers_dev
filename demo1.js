@@ -1,5 +1,26 @@
-// demo1.js
+document.addEventListener('DOMContentLoaded', () => {
+    const steps = document.querySelectorAll('.step');
+    let currentStep = 0;
 
-document.addEventListener('DOMContentLoaded', function () {
-    document.getElementById('greet').innerText = "Hello, welcome to JavaScript Demo 1!";
+    function showStep(index) {
+        steps.forEach((step, i) => {
+            step.style.display = i === index ? 'block' : 'none';
+        });
+    }
+
+    document.getElementById('nextStep').addEventListener('click', () => {
+        if (currentStep < steps.length - 1) {
+            currentStep++;
+            showStep(currentStep);
+        }
+    });
+
+    document.getElementById('prevStep').addEventListener('click', () => {
+        if (currentStep > 0) {
+            currentStep--;
+            showStep(currentStep);
+        }
+    });
+
+    showStep(currentStep);
 });
