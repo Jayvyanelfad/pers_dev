@@ -1,23 +1,21 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f8ff; /* AliceBlue background */
-    color: #333;
+    background-color: #f0f4f8;
     margin: 0;
     padding: 0;
 }
 
 header {
-    background-color: #4a90e2; /* CadetBlue */
+    background-color: #4CAF50; /* Green background for header */
     color: white;
-    padding: 20px;
+    padding: 10px 0;
     text-align: center;
 }
 
 nav a {
+    margin: 0 15px;
     color: white;
     text-decoration: none;
-    margin: 0 15px;
-    font-weight: bold;
 }
 
 nav a:hover {
@@ -26,26 +24,85 @@ nav a:hover {
 
 main {
     padding: 20px;
-}
-
-section {
-    background-color: #ffe4b5; /* Moccasin */
+    max-width: 800px;
+    margin: auto;
+    background: #ffffff; /* White background for main content */
     border-radius: 10px;
-    margin: 20px 0;
-    padding: 20px;
-    text-align: center; /* Center align content */
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
 h2 {
-    color: #d2691e; /* Chocolate */
+    color: #3333ff; /* Dark blue color for headings */
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 15px;
+}
+
+ul li strong {
+    color: #333; /* Dark grey color for list items */
+}
+
+ul li p {
+    margin: 5px 0 15px 0;
 }
 
 footer {
-    background-color: #4682b4; /* SteelBlue */
-    color: white;
     text-align: center;
     padding: 10px 0;
-    position: fixed;
-    bottom: 0;
+    background-color: #4CAF50; /* Green background for footer */
+    color: white;
+    position: absolute;
     width: 100%;
+    bottom: 0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+    color: #1a73e8; /* Light blue color for labels */
+}
+
+input, select, button {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input:focus, select:focus {
+    border-color: #4CAF50; /* Green border for focused input fields */
+}
+
+button {
+    background-color: #1a73e8; /* Blue background for button */
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0f5ba7; /* Darker blue on hover for button */
+}
+
+.courses-list a {
+    color: #4CAF50;
+}
+
+.courses-list a:hover {
+    color: #0f5ba7;
+    text-decoration: underline;
+}
+
+.courses-list li {
+    margin-bottom: 20px;
 }
