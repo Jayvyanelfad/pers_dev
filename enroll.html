@@ -5,12 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Enroll - Personal Development Academy</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #E3F2FD;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #1A237E;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav a {
+            margin: 0 15px;
+            color: white;
+            text-decoration: none;
+        }
+        main {
+            padding: 20px;
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-bottom: 5px;
+            color: #1A73E8;
+        }
+        input, select, button {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #E91E63;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #C2185B;
+        }
+    </style>
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            if (!localStorage.getItem('isEnrolled')) {
-                alert('Please register to access the enrollment form.');
-                window.location.href = 'register.html';
-            }
+        document.getElementById('enrollment-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            localStorage.setItem('isEnrolled', true);
+            window.location.href = 'register.html';
         });
     </script>
 </head>
@@ -52,10 +101,5 @@
     <footer>
         <p>&copy; 2024 Personal Development Academy. All rights reserved.</p>
     </footer>
-
-    <script src="scripts.js"></script>
-    <script src="demo1.js"></script>
-    <script src="demo2.js"></script>
-    <script src="demo3.js"></script>
 </body>
 </html>
