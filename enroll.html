@@ -5,43 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Enroll - Personal Development Academy</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f4f8;
-            margin: 0;
-            padding: 0;
-        }
-        header, nav a {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 0;
-            text-align: center;
-            text-decoration: none;
-        }
-        main {
-            padding: 20px;
-            max-width: 600px;
-            margin: auto;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        form {
-            display: flex;
-            flex-direction: column;
-        }
-        label, input, select, button {
-            padding: 10px;
-            margin-bottom: 15px;
-            border-radius: 5px;
-        }
-        button {
-            background-color: #1a73e8;
-            color: white;
-            cursor: pointer;
-        }
-    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (!localStorage.getItem('isEnrolled')) {
+                alert('Please register to access the enrollment form.');
+                window.location.href = 'register.html';
+            }
+        });
+    </script>
 </head>
 <body>
     <header>
@@ -82,34 +53,9 @@
         <p>&copy; 2024 Personal Development Academy. All rights reserved.</p>
     </footer>
 
-    <script>
-        document.getElementById('enrollment-form').addEventListener('submit', async (e) => {
-            e.preventDefault();
-
-            const enrollmentData = {
-                firstName: document.getElementById('firstName').value,
-                lastName: document.getElementById('lastName').value,
-                email: document.getElementById('email').value,
-                phone: document.getElementById('phone').value,
-                course: document.getElementById('course').value
-            };
-
-            try {
-                const response = await fetch('http://localhost:3000/enroll', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(enrollmentData)
-                });
-                const result = await response.text();
-                alert(result);
-                localStorage.setItem('isEnrolled', true); // Set flag in local storage
-                window.location.href = "register.html"; // Redirect to register
-            } catch (error) {
-                console.error('Error:', error);
-            }
-        });
-    </script>
+    <script src="scripts.js"></script>
+    <script src="demo1.js"></script>
+    <script src="demo2.js"></script>
+    <script src="demo3.js"></script>
 </body>
 </html>
