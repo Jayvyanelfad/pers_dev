@@ -9,7 +9,7 @@ const port = 3000;
 app.use(bodyParser.json());
 app.use(cors());
 
-mongoose.connect('mongodb://localhost:27017/enrollmentDB', {
+mongoose.connect('mongodb://localhost:27017/crudDemo', {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
@@ -20,56 +20,37 @@ db.once('open', () => {
   console.log('Connected to MongoDB');
 });
 
-// Schema and model for enrollments
-const enrollmentSchema = new mongoose.Schema({
-  firstName: String,
-  lastName: String,
+const userSchema = new mongoose.Schema({
+  name: String,
   email: String,
   phone: String,
-  course: String
 });
 
-const Enrollment = mongoose.model('Enrollment', enrollmentSchema);
+const User = mongoose.model('User', userSchema);
 
-// Create new enrollment
-app.post('/enroll', async (req, res) => {
-  const newEnrollment = new Enrollment(req.body);
-  try {
-    await newEnrollment.save();
-    res.send('Enrollment successful!');
-  } catch (error) {
-    res.status(500).send('Enrollment failed');
-  }
+// Create
+app.post('/users', async (req, res) => {
+  const newUser = new User(req.body);
+  await newUser.save();
+  res.send('User created successfully!');
 });
 
-// Read all enrollments
-app.get('/enrollments', async (req, res) => {
-  try {
-    const enrollments = await Enrollment.find();
-    res.json(enrollments);
-  } catch (error) {
-    res.status(500).send('Error retrieving enrollments');
-  }
+// Read
+app.get('/users', async (req, res) => {
+  const users = await User.find();
+  res.json(users);
 });
 
-// Update enrollment
-app.post('/update-enrollment', async (req, res) => {
-  try {
-    await Enrollment.updateOne({ _id: req.body.id }, req.body);
-    res.send('Enrollment updated successfully!');
-  } catch (error) {
-    res.status(500).send('Update failed');
-  }
+// Update
+app.put('/users/:id', async (req, res) => {
+  await User.findByIdAndUpdate(req.params.id, req.body);
+  res.send('User updated successfully!');
 });
 
-// Delete enrollment
-app.post('/delete-enrollment', async (req, res) => {
-  try {
-    await Enrollment.deleteOne({ _id: req.body.id });
-    res.send('Enrollment deleted successfully!');
-  } catch (error) {
-    res.status(500).send('Deletion failed');
-  }
+// Delete
+app.delete('/users/:id', async (req, res) => {
+  await User.findByIdAndDelete(req.params.id);
+  res.send('User deleted successfully!');
 });
 
 app.listen(port, () => {
