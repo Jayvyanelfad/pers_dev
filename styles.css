@@ -1,14 +1,14 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f4f8;
+    background-color: #f0f4f8; /* Light background for better readability */
     margin: 0;
     padding: 0;
 }
 
 header {
-    background-color: #4CAF50; /* Green background for header */
+    background-color: #2f4f4f; /* Dark slate gray for header */
     color: white;
-    padding: 10px 0;
+    padding: 15px 0;
     text-align: center;
 }
 
@@ -25,19 +25,19 @@ nav a:hover {
 main {
     padding: 20px;
     max-width: 800px;
-    margin: auto;
+    margin: 20px auto;
     background: #ffffff; /* White background for main content */
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
 h1, h2 {
-    color: #3333ff; /* Dark blue color for headings */
+    color: #1a1a1a; /* Dark color for headings */
 }
 
 form label {
     margin-bottom: 5px;
-    color: #1a73e8; /* Light blue color for labels */
+    color: #3d3d3d; /* Gray color for labels */
 }
 
 input, select, button {
@@ -45,21 +45,22 @@ input, select, button {
     margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    width: 100%; /* Full width inputs */
 }
 
 input:focus, select:focus {
-    border-color: #4CAF50; /* Green border for focused input fields */
+    border-color: #1e90ff; /* Dodger blue for focused input fields */
 }
 
 button {
-    background-color: #1a73e8; /* Blue background for button */
+    background-color: #ff69b4; /* Hot pink background for button */
     color: white;
     border: none;
     cursor: pointer;
 }
 
 button:hover {
-    background-color: #0f5ba7; /* Darker blue on hover for button */
+    background-color: #ff1493; /* Deep pink on hover for button */
 }
 
 ul.courses-list {
@@ -73,18 +74,18 @@ ul.courses-list li {
 
 ul.courses-list li a {
     text-decoration: none;
-    color: #4CAF50; /* Green color for links */
+    color: #4682b4; /* Steel blue color for links */
 }
 
 ul.courses-list li a:hover {
-    color: #0f5ba7; /* Dark blue on hover for links */
+    color: #2e8b57; /* Sea green on hover for links */
     text-decoration: underline;
 }
 
 footer {
     text-align: center;
-    padding: 10px 0;
-    background-color: #4CAF50; /* Green background for footer */
+    padding: 15px 0;
+    background-color: #2f4f4f; /* Dark slate gray for footer */
     color: white;
     position: absolute;
     width: 100%;
