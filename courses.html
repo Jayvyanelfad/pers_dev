@@ -5,6 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Course Details - Personal Development Academy</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        ul.courses-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul.courses-list li {
+            margin-bottom: 15px; /* Adds space between the items */
+        }
+
+        ul.courses-list li a {
+            text-decoration: none;
+            color: #4CAF50;
+        }
+
+        ul.courses-list li a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -20,7 +39,7 @@
         <section>
             <h2>Available Courses</h2>
             <p>We offer the following courses designed to help you excel in personal development:</p>
-            <ul>
+            <ul class="courses-list">
                 <li><a href="time-management.html">Time Management & Productivity</a></li>
                 <li><a href="communication-skills.html">Effective Communication Skills</a></li>
                 <li><a href="leadership.html">Leadership and Teamwork</a></li>
