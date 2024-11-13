@@ -55,14 +55,6 @@
             background-color: #0f5ba7;
         }
     </style>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            if (!localStorage.getItem('isEnrolled')) {
-                alert('Please register to access the enrollment form.');
-                window.location.href = 'register.html';
-            }
-        });
-    </script>
 </head>
 <body>
     <header>
@@ -103,9 +95,34 @@
         <p>&copy; 2024 Personal Development Academy. All rights reserved.</p>
     </footer>
 
-    <script src="scripts.js"></script>
-    <script src="demo1.js"></script>
-    <script src="demo2.js"></script>
-    <script src="demo3.js"></script>
+    <script>
+        document.getElementById('enrollment-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const enrollmentData = {
+                firstName: document.getElementById('firstName').value,
+                lastName: document.getElementById('lastName').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                course: document.getElementById('course').value
+            };
+
+            try {
+                const response = await fetch('http://localhost:3000/enroll', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(enrollmentData)
+                });
+                const result = await response.text();
+                alert(result);
+                // Redirect to registration page
+                window.location.href = "register.html";
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        });
+    </script>
 </body>
 </html>
