@@ -1,11 +1,13 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const cors = require('cors'); // Import the cors package
 
 const app = express();
 const port = 3000;
 
 app.use(bodyParser.json());
+app.use(cors()); // Use the cors middleware
 
 // Connect to MongoDB
 mongoose.connect('mongodb://localhost:27017/enrollmentDB', {
