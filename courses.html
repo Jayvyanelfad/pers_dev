@@ -12,7 +12,7 @@
         }
 
         ul.courses-list li {
-            margin-bottom: 20px; /* Adds space between the items */
+            margin-bottom: 20px;
         }
 
         ul.courses-list li a {
@@ -25,6 +25,14 @@
             text-decoration: underline;
         }
     </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (!localStorage.getItem('isEnrolled')) {
+                alert('Please register to access the courses.');
+                window.location.href = 'register.html';
+            }
+        });
+    </script>
 </head>
 <body>
     <header>
