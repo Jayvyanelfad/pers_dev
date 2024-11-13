@@ -19,6 +19,8 @@ document.getElementById('enrollment-form').addEventListener('submit', async (e) 
         });
         const result = await response.text();
         alert(result);
+        // Optional: Redirect to another page after successful enrollment
+        // window.location.href = "success.html";
     } catch (error) {
         console.error('Error:', error);
     }
