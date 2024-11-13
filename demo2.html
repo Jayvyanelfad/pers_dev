@@ -1,3 +1,38 @@
-<p id="counter">Count: 0</p>
-<button id="counterButton">Increase Counter</button>
-<script src="demo2.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Course Content - Personal Development Academy</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Dynamic Course Content</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="enroll.html">Enroll Now</a>
+            <a href="courses.html">Courses</a>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Select a Course</h2>
+            <ul>
+                <li><a href="#" class="course-link" data-course-file="time-management.html">Time Management & Productivity</a></li>
+                <li><a href="#" class="course-link" data-course-file="communication-skills.html">Effective Communication Skills</a></li>
+                <li><a href="#" class="course-link" data-course-file="leadership.html">Leadership and Teamwork</a></li>
+                <li><a href="#" class="course-link" data-course-file="emotional-intelligence.html">Emotional Intelligence</a></li>
+            </ul>
+            <div id="course-content"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Personal Development Academy. All rights reserved.</p>
+    </footer>
+
+    <script src="demo2.js"></script>
+</body>
+</html>
