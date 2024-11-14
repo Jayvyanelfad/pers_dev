@@ -1,3 +1,4 @@
+/* Existing styles */
 body {
     font-family: Arial, sans-serif;
     background-color: #E3F2FD;
@@ -89,4 +90,16 @@ footer {
     position: relative;
     bottom: 0;
     width: 100%;
+}
+
+/* Additional styles for new pages */
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Highlighted navigation links */
+nav a.highlight {
+    color: #FF5722; /* Highlight color (Orange) */
 }
