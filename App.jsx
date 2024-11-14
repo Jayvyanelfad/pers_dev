@@ -6,6 +6,8 @@ import RateEffectiveCommunication from './pages/RateEffectiveCommunication';
 import RateLeadership from './pages/RateLeadership';
 import RateEmotionalIntelligence from './pages/RateEmotionalIntelligence';
 import './App.css';
+import './styles.css';
+import submitAlert from './scripts.js';
 
 function App() {
     return (
