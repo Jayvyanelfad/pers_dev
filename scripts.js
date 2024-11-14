@@ -1,7 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Registration form submission logic
-    if (document.getElementById('register-form')) {
-        document.getElementById('register-form').addEventListener('submit', async function(event) {
+    const registerForm = document.getElementById('register-form');
+    if (registerForm) {
+        registerForm.addEventListener('submit', async function(event) {
             event.preventDefault();
             
             const registrationData = {
@@ -28,8 +29,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Enrollment form submission logic
-    if (document.getElementById('enrollment-form')) {
-        document.getElementById('enrollment-form').addEventListener('submit', async function(event) {
+    const enrollmentForm = document.getElementById('enrollment-form');
+    if (enrollmentForm) {
+        enrollmentForm.addEventListener('submit', async function(event) {
             event.preventDefault();
 
             const enrollmentData = {
@@ -58,8 +60,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Account setup form submission logic
-    if (document.getElementById('setup-form')) {
-        document.getElementById('setup-form').addEventListener('submit', async function(event) {
+    const setupForm = document.getElementById('setup-form');
+    if (setupForm) {
+        setupForm.addEventListener('submit', async function(event) {
             event.preventDefault();
 
             const setupData = {
