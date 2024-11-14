@@ -1,3 +1,5 @@
+// src/scripts.js
+
 document.addEventListener('DOMContentLoaded', function() {
     // Registration form submission logic
     document.getElementById('register-form').addEventListener('submit', async function(event) {
@@ -19,8 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
             const result = await response.text();
             alert(result);
-            // Redirect to success page or show success message
-            window.location.href = "success.html";
+            window.location.href = "success.html";  // Redirect to success page
         } catch (error) {
             console.error('Error:', error);
         }
@@ -48,8 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
             const result = await response.text();
             alert(result);
-            // Redirect to success page
-            window.location.href = "success.html";
+            window.location.href = "success.html";  // Redirect to success page
         } catch (error) {
             console.error('Error:', error);
         }
