@@ -3,62 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Course Details - Personal Development Academy</title>
+    <title>Courses</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        ul.courses-list {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        ul.courses-list li {
-            margin-bottom: 20px;
-        }
-
-        ul.courses-list li a {
-            text-decoration: none;
-            color: #4CAF50;
-        }
-
-        ul.courses-list li a:hover {
-            color: #0f5ba7;
-            text-decoration: underline;
-        }
-    </style>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            if (!localStorage.getItem('isEnrolled')) {
-                alert('Please register to access the courses.');
-                window.location.href = 'register.html';
-            }
-        });
-    </script>
 </head>
 <body>
-    <header>
-        <h1>Course Details</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="enroll.html">Enroll Now</a>
-            <a href="courses.html">Courses</a>
-        </nav>
-    </header>
-
-    <main>
-        <section>
-            <h2>Available Courses</h2>
-            <p>We offer the following courses designed to help you excel in personal development:</p>
+    <div class="container">
+        <header>
+            <h1>Available Courses</h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="register.html">Register</a>
+                <a href="enroll.html">Enroll</a>
+            </nav>
+        </header>
+        <main>
+            <h2>Courses</h2>
             <ul class="courses-list">
-                <li><a href="time-management.html">Time Management & Productivity</a></li>
-                <li><a href="Effective communication.html">Effective Communication Skills</a></li>
-                <li><a href="Leadership and Teamwork.html">Leadership and Teamwork</a></li>
-                <li><a href="Emotional intelligence.html">Emotional Intelligence</a></li>
+                <li><a href="time-management.html">Time Management</a></li>
+                <li><a href="effective-communication.html">Effective Communication</a></li>
+                <li><a href="leadership.html">Leadership and Teamwork</a></li>
+                <li><a href="emotional-intelligence.html">Emotional Intelligence</a></li>
             </ul>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2024 Personal Development Academy. All rights reserved.</p>
-    </footer>
+        </main>
+        <footer>
+            <p>&copy; 2024 Personal Development Academy. All rights reserved.</p>
+        </footer>
+    </div>
 </body>
 </html>
