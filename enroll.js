@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
         };
 
         try {
-            const response = await fetch('http://localhost:5000/enroll', {
+            const response = await fetch('http://localhost:3000/enroll', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -22,8 +22,8 @@ document.addEventListener('DOMContentLoaded', function() {
             });
             const result = await response.text();
             alert(result);
-            // Redirect to success page
-            window.location.href = "success.html";
+            // Redirect to setup page for username & password
+            window.location.href = "setup.html";
         } catch (error) {
             console.error('Error:', error);
         }
