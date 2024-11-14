@@ -3,103 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enroll - Personal Development Academy</title>
+    <title>Enroll</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #E3F2FD;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: #1A237E;
-            color: white;
-            padding: 10px 0;
-            text-align: center;
-        }
-        nav a {
-            margin: 0 15px;
-            color: white;
-            text-decoration: none;
-        }
-        main {
-            padding: 20px;
-            max-width: 600px;
-            margin: auto;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        form {
-            display: flex;
-            flex-direction: column;
-        }
-        label {
-            margin-bottom: 5px;
-            color: #1A73E8;
-        }
-        input, select, button {
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        button {
-            background-color: #E91E63;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #C2185B;
-        }
-    </style>
-    <script>
-        document.getElementById('enrollment-form').addEventListener('submit', (e) => {
-            e.preventDefault();
-            localStorage.setItem('isEnrolled', true);
-            window.location.href = 'register.html';
-        });
-    </script>
+    <script src="scripts.js" defer></script>
 </head>
 <body>
-    <header>
+    <div class="container">
         <h1>Enroll Now</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="courses.html">Courses</a>
-        </nav>
-    </header>
-
-    <main>
         <form id="enrollment-form">
             <label for="firstName">First Name:</label>
             <input type="text" id="firstName" name="firstName" required>
-
+            
             <label for="lastName">Last Name:</label>
             <input type="text" id="lastName" name="lastName" required>
-
+            
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" required>
-
+            
             <label for="phone">Phone:</label>
             <input type="tel" id="phone" name="phone" required>
-
+            
             <label for="course">Course:</label>
-            <select id="course" name="course" required>
-                <option value="time-management">Time Management & Productivity</option>
-                <option value="communication-skills">Effective Communication Skills</option>
-                <option value="leadership">Leadership and Teamwork</option>
-                <option value="emotional-intelligence">Emotional Intelligence</option>
-            </select>
-
+            <input type="text" id="course" name="course" required>
+            
             <button type="submit">Enroll</button>
         </form>
-    </main>
-
-    <footer>
-        <p>&copy; 2024 Personal Development Academy. All rights reserved.</p>
-    </footer>
+    </div>
 </body>
 </html>
