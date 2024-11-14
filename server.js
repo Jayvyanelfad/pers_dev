@@ -4,6 +4,13 @@ const cors = require('cors');
 const { MongoClient, ServerApiVersion } = require('mongodb');
 const app = express();
 
+const helpRoute = require('./HelpRoute');
+const helpAPI = require('./HelpAPI');
+const contactUsRoute = require('./ContactUsRoute');
+const contactUsAPI = require('./ContactUsAPI');
+const rateContentRoute = require('./RateContentRoute');
+const rateContentAPI = require('./RateContentAPI');
+
 app.use(express.json());
 app.use(cors());
 
@@ -49,6 +56,13 @@ app.post('/rate', async (req, res) => {
     const { course, rating, comment } = req.body;
     res.send('Rating submitted!');
 });
+
+app.use(helpRoute);
+app.use(helpAPI);
+app.use(contactUsRoute);
+app.use(contactUsAPI);
+app.use(rateContentRoute);
+app.use(rateContentAPI);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
