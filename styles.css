@@ -31,6 +31,11 @@ h1, h2 {
     color: #8B4513; /* Chocolate */
 }
 
+form {
+    display: flex;
+    flex-direction: column;
+}
+
 form label {
     margin-bottom: 5px;
     color: #1A73E8; /* Light Blue */
@@ -41,6 +46,7 @@ input, select, button {
     margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    width: 100%;
 }
 
 button {
