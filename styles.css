@@ -99,7 +99,7 @@ footer {
     padding: 20px;
 }
 
-/* Highlighted navigation links */
-nav a.highlight {
-    color: #FF5722; /* Highlight color (Orange) */
+/* Different colors for Help, Rate Content, Contact Us links */
+nav a[href="help.html"], nav a[href="ratecontent.html"], nav a[href="contactus.html"] {
+    color: #FF8C00; /* Dark Orange */
 }
