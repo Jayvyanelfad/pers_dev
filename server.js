@@ -46,6 +46,17 @@ const courseSchema = new mongoose.Schema({
 
 const Course = mongoose.model('Course', courseSchema);
 
+// Schema and Model for Enrollment
+const enrollmentSchema = new mongoose.Schema({
+    firstName: String,
+    lastName: String,
+    email: String,
+    phone: String,
+    course: String
+});
+
+const Enrollment = mongoose.model('Enrollment', enrollmentSchema);
+
 // API Endpoints
 app.get('/courses', async (req, res) => {
     const courses = await Course.find();
@@ -55,6 +66,29 @@ app.get('/courses', async (req, res) => {
 app.post('/rate', async (req, res) => {
     const { course, rating, comment } = req.body;
     res.send('Rating submitted!');
+});
+
+// API Endpoint to Handle Enrollment
+app.post('/enroll', async (req, res) => {
+    const { firstName, lastName, email, phone, course } = req.body;
+
+    // Create a new enrollment document
+    const newEnrollment = new Enrollment({
+        firstName,
+        lastName,
+        email,
+        phone,
+        course
+    });
+
+    // Save the enrollment document to MongoDB
+    try {
+        await newEnrollment.save();
+        res.status(201).send('Enrollment successful!');
+    } catch (error) {
+        console.error('Error saving enrollment:', error);
+        res.status(500).send('Error enrolling!');
+    }
 });
 
 const PORT = process.env.PORT || 5000;
