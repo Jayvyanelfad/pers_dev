@@ -51,7 +51,4 @@ document.addEventListener('DOMContentLoaded', function() {
             alert(result);
             window.location.href = "success.html";  // Redirect to success page
         } catch (error) {
-            console.error('Error:', error);
-        }
-    });
-});
+            console
