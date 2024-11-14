@@ -1,9 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import Home from './pages/HomePage';
-import Help from './pages/Help';
-import ContactOwner from './pages/ContactOwner';
-import RateContent from './pages/RateContent';
+import RateTimeManagement from './pages/RateTimeManagement';
+import RateEffectiveCommunication from './pages/RateEffectiveCommunication';
+import RateLeadership from './pages/RateLeadership';
+import RateEmotionalIntelligence from './pages/RateEmotionalIntelligence';
 import './App.css';
 
 function App() {
@@ -12,15 +13,17 @@ function App() {
             <div className="container">
                 <nav>
                     <Link to="/">Home</Link>
-                    <Link to="/help">Need Help?</Link>
-                    <Link to="/contact-owner">Contact Owner</Link>
-                    <Link to="/rate-content">Rate Our Content</Link>
+                    <Link to="/rate-time-management">Rate Time Management</Link>
+                    <Link to="/rate-effective-communication">Rate Effective Communication</Link>
+                    <Link to="/rate-leadership">Rate Leadership and Teamwork</Link>
+                    <Link to="/rate-emotional-intelligence">Rate Emotional Intelligence</Link>
                 </nav>
                 <Switch>
                     <Route exact path="/" component={Home} />
-                    <Route path="/help" component={Help} />
-                    <Route path="/contact-owner" component={ContactOwner} />
-                    <Route path="/rate-content" component={RateContent} />
+                    <Route path="/rate-time-management" component={RateTimeManagement} />
+                    <Route path="/rate-effective-communication" component={RateEffectiveCommunication} />
+                    <Route path="/rate-leadership" component={RateLeadership} />
+                    <Route path="/rate-emotional-intelligence" component={RateEmotionalIntelligence} />
                 </Switch>
                 <footer>
                     <p>&copy; 2024 Personal Development Academy. All rights reserved.</p>
