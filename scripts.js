@@ -1,6 +1,6 @@
-// src/scripts.js
-
 document.addEventListener('DOMContentLoaded', function() {
+    // Existing scripts
+
     // Registration form submission logic
     document.getElementById('register-form').addEventListener('submit', async function(event) {
         event.preventDefault();
@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
         };
         
         try {
-            const response = await fetch('http://localhost:3000/register', {
+            const response = await fetch('http://localhost:5000/register', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
         };
 
         try {
-            const response = await fetch('http://localhost:3000/enroll', {
+            const response = await fetch('http://localhost:5000/enroll', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
